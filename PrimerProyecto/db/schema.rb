@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030103906) do
+ActiveRecord::Schema.define(version: 20141104155514) do
 
   create_table "contents", force: true do |t|
     t.string   "name"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20141030103906) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
-    t.decimal  "latidude",   precision: 15, scale: 12
-    t.decimal  "longitude",  precision: 15, scale: 12
+    t.decimal  "latidude",               precision: 15, scale: 12
+    t.decimal  "longitude",              precision: 15, scale: 12
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "emergency"
-    t.integer  "managed_by"
+    t.string   "emergency",  limit: 150
+    t.string   "managed_by", limit: 250
   end
 
   create_table "users", force: true do |t|
